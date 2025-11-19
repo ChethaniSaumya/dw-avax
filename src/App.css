@@ -1,0 +1,732 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/rhodeport');
+@import url('https://fonts.cdnfonts.com/css/sf-mono');
+
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'SF Mono', 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: #07070c;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.presale-app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  width: 800px;
+}
+
+.presale-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Card Container - Responsive */
+.presale-card {
+  background: rgba(15, 15, 22, 0.9);
+  border-radius: 24px;
+  padding: 3rem;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Header Section */
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg,
+      rgba(170, 120, 242, 1) 0%,
+      rgba(162, 158, 255, 1) 30%,
+      rgba(123, 226, 250, 1) 66%,
+      rgba(108, 210, 226, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #def7ff;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Center Connect Wallet Button */
+.card-header>div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Connect Button */
+.connect-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.connect-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.connect-button.connected {
+  background: rgba(162, 158, 255, 0.15);
+  border-color: rgba(162, 158, 255, 0.3);
+  color: #A29EFF;
+  max-width: 180px;
+}
+
+/* Metrics Section */
+.presale-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metric-label {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Payment Methods */
+.payment-methods {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.method-button {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.method-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.method-button.active {
+  background: rgba(170, 120, 242, 0.15);
+  border-color: rgba(170, 120, 242, 0.3);
+  color: #AA78F2;
+}
+
+/* Quantity Selector */
+.quantity-selector {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.quantity-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-display {
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-width: 60px;
+  color: #AA78F2;
+}
+
+.quantity-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+/* Cost Display */
+.cost-display {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cost-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cost-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Network Warning */
+.network-warning {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  color: #ff6b6b;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Purchase Section */
+.purchase-section {
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s;
+}
+
+.input-group:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3rem 0;
+}
+
+.input-group input:focus {
+  outline: none;
+}
+
+.input-group span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.buy-button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: rgb(10, 10, 10);
+ 
+}
+
+.gradient-bg {
+  background: linear-gradient(90deg,
+      rgb(160, 93, 255) 0%,
+      rgb(142, 139, 253) 30%,
+      rgb(109, 224, 250) 66%,
+      rgb(100, 217, 235) 100%);
+}
+
+.buy-button:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(123, 226, 250, 0.3);
+  color: white;
+}
+
+.buy-button:active:not(.disabled) {
+  transform: translateY(0);
+  color: white;
+}
+
+/* Enhanced Timer Section */
+.timer-section {
+  background: rgba(10, 10, 20, 0.6);
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-top: 2.5rem;
+  border: 1px solid rgba(170, 120, 242, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+      rgba(170, 120, 242, 1) 0%,
+      rgba(162, 158, 255, 1) 30%,
+      rgba(123, 226, 250, 1) 66%,
+      rgba(108, 210, 226, 1) 100%);
+}
+
+.timer-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+  color: #A27EF2;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timer-header svg {
+  width: 18px;
+  height: 18px;
+}
+
+.time-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(170, 120, 242, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  min-width: 80px;
+  border: 1px solid rgba(170, 120, 242, 0.2);
+}
+
+.time-unit span {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #AA78F2 0%, #7BE2FA 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.time-unit small {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.time-separator {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgba(170, 120, 242, 0.5);
+  margin: 0 -0.5rem;
+  padding-bottom: 1.2rem;
+}
+
+.timer-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+.progress-line {
+  width: 50px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.progress-dot.active,
+.progress-line.active {
+  background: #AA78F2;
+  border-color: #AA78F2;
+}
+
+/* Notification Styles */
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notification {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+  max-width: 300px;
+  border-left: 4px solid;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.notification.pending {
+  background: rgba(15, 15, 22, 0.95);
+  border-color: #02ace0;
+  border-left: 4px solid #02ace0;
+}
+
+.notification.success {
+  background: rgba(15, 15, 22, 0.95);
+  border-color: #4ade80;
+  border-left: 4px solid #4ade80;
+}
+
+.notification.error {
+  background: rgba(15, 15, 22, 0.95);
+  border-color: #f87171;
+  border-left: 4px solid #f87171;
+}
+
+/* Disabled Button Styles */
+.buy-button.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: linear-gradient(90deg,
+      rgba(170, 120, 242, 0.6) 0%,
+      rgba(162, 158, 255, 0.6) 30%,
+      rgba(123, 226, 250, 0.6) 66%,
+      rgba(108, 210, 226, 0.6) 100%);
+      color: white;
+}
+
+/* Approval Buttons Container */
+.approval-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Outline Variant */
+.outline-button {
+  background: transparent;
+  border: 2px solid #AA78F2;
+  color: #AA78F2;
+}
+
+.outline-button:hover:not(.disabled) {
+  background: rgba(170, 120, 242, 0.1);
+}
+
+.outline-button.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+ 
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+  .presale-app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .presale-card {
+    padding: 2rem;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .time-unit {
+    min-width: 70px;
+    padding: 0.8rem 1rem;
+  }
+
+  .time-unit span {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .presale-app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .presale-app {
+    padding: 0.5rem;
+  }
+
+  .presale-card {
+    padding: 1.5rem;
+    margin: 0;
+    border-radius: 12px;
+  }
+
+  .presale-metrics {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .metric {
+    padding: 0.8rem;
+  }
+
+  .payment-methods {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .method-button {
+    padding: 0.8rem;
+  }
+
+  .quantity-controls {
+    gap: 0.8rem;
+  }
+
+  .quantity-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .quantity-display {
+    font-size: 1.3rem;
+    min-width: 50px;
+  }
+
+  .cost-display {
+    padding: 0.8rem;
+  }
+
+  .cost-item,
+  .cost-total {
+    font-size: 0.85rem;
+  }
+
+  .buy-button {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .approval-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .time-display {
+    gap: 0.4rem;
+  }
+
+  .time-unit {
+    min-width: 60px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .time-unit span {
+    font-size: 1.3rem;
+  }
+
+  .time-unit small {
+    font-size: 0.6rem;
+  }
+
+  .time-separator {
+    font-size: 1.2rem;
+    margin: 0 -0.3rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .timer-section {
+    padding: 1.2rem;
+  }
+
+  .notification-container {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+
+  .notification {
+    max-width: 100%;
+    font-size: 0.85rem;
+    padding: 10px 15px;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 400px) {
+  .presale-app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .presale-card {
+    padding: 1rem;
+  }
+
+  .time-unit {
+    min-width: 50px;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .time-unit span {
+    font-size: 1.1rem;
+  }
+
+  .quantity-display {
+    font-size: 1.1rem;
+  }
+}
+
+/* NFT Image Container */
+.nft-image-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(138, 43, 226, 0.3);
+  border: 2px solid rgba(138, 43, 226, 0.5);
+}
+
+.nft-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
