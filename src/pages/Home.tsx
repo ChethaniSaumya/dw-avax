@@ -2488,8 +2488,8 @@ const Home = () => {
 				<div className="presale-card">
 					{/* Header Section */}
 					<div className="card-header">
-						<h2 className="gradient-text">AVAX DIAMOND WOMAN</h2>
-						<p className="subtitle">Join the Royalty Club with Diamond Woman NFTs</p>
+						<h2 className="gradient-text">AVAX DIAMONDWOMAN</h2>
+						<p className="subtitle">Join the Royalty Club with DiamondWoman NFTs</p>
 
 						{/* RainbowKit Connect Button */}
 						<ConnectButton.Custom>
